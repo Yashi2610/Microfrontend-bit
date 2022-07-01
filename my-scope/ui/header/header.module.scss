@@ -1,0 +1,68 @@
+.main {
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+.main_div {
+  height: 54vh;
+
+  background: linear-gradient(to right, #086573 0%, #85bee2 100%);
+}
+
+.title {
+  position: relative;
+}
+
+.title::before {
+  position: absolute;
+
+  content: '';
+
+  height: 4px;
+
+  width: 33px;
+
+  bottom: 1px;
+
+  left: 0;
+
+  border-radius: 5px;
+
+  margin-left: 5px;
+
+  background: linear-gradient(to right, #99004d 0%, #ff0080 100%);
+}
+.loginform {
+  margin: auto;
+}
+
+.loginform .input-box {
+  outline: none;
+
+  border: none;
+
+  border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+
+  height: 100%;
+
+  width: 100%;
+
+  font-weight: 500;
+
+  font-size: 16px;
+}
+
+.btn {
+  font-size: 20px;
+
+  background-color: #cc4187;
+
+  font-weight: 600;
+}
+
+.card_button {
+  color: black;
+}
