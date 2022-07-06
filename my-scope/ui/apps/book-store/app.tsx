@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 
-import { Card } from '@my-org/my-scope.ui.card';
+import { Card } from '@my-org/my-scope.card';
 
 export type BookStoreAppProps = {
   children?: ReactNode;

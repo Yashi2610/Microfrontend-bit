@@ -76,9 +76,23 @@ const Home = ({ handleClick }) => {
       price: 70,
       amount: 1,
     },
+    {
+      id: 7,
+      title: 'Lock every door',
+      img: img6,
+      price: 70,
+      amount: 1,
+    },
+    {
+      id: 8,
+      title: 'Lock every door',
+      img: img6,
+      price: 70,
+      amount: 1,
+    },
   ];
   return (
-    <section>
+    <section >
       {books.map((item) => (
         <CardPage key={item.id} item={item} handleClick={handleClick} />
       ))}
