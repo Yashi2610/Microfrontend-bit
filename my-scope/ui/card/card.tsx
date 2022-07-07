@@ -4,7 +4,7 @@ import React, { ReactNode, useState } from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { Header } from '@my-org/my-scope.ui.header';
+import { Header } from '@my-org/my-scope.header';
 
 import Home from './home';
 

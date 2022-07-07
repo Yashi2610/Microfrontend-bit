@@ -1,9 +1,19 @@
 import React, { ReactNode, useState } from 'react';
 import { Link } from 'react-router-dom';
+import './header.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Modal } from 'react-bootstrap';
 import styles from './header.module.scss';
 import Icon from '@bit/littlebox.atd.icons';
+import {FaUser} from "react-icons/fa";
+import {FaShoppingCart} from "react-icons/fa";
+import {GiWhiteBook} from "react-icons/gi";
+import {AiFillHome} from "react-icons/ai";
+import {GiHamburgerMenu} from "react-icons/gi"
+
+
+
+
 export function Header({setShow, size }) {
   const [modal, setModal] = useState(false);
   const handleClose = () => setModal(false);
@@ -47,68 +57,24 @@ export function Header({setShow, size }) {
   }
   return (
 
+<>
 
-<div>
-     
-
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div className="container-fluid">
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-               
-                  <a className="nav-link active" onClick={() => setShow(true)}>
-          Home
-        </a>
-              </li>
-            </ul>
-            
-            <form className="d-flex">
-           
-              <button
-                type="button"
-                className="btn btn-info"
-                aria-label="Close"
-                onClick={handleShow}
-              >
-                Login
-              </button>
-              &nbsp;&nbsp;
+<nav>
+              <div className="logo"><GiWhiteBook></GiWhiteBook>BookStore</div>
+              <input type="checkbox" id="click"></input>
+              <label htmlFor="click" className="menu-btn">
               
-              <div className="cart" onClick={() => setShow(false)}>
-          <span>
-          <button
-                type="button"
-                className="btn btn-info"
-               
-              >
-                 <Icon glyph="cart" />
-                 <span>{size}</span>
-              </button>
-          </span>
-          
-        </div>
+                <GiHamburgerMenu  className="menuicon" color="skyblue"></GiHamburgerMenu>
+              </label>
+              <ul>
+                <li><a  href="#" ><AiFillHome color="skyblue" size={30} onClick={() => setShow(true)}></AiFillHome></a></li>&nbsp;&nbsp;
+                <li><a href="#"><FaUser color="skyblue" size={30}onClick={handleShow}></FaUser></a></li>&nbsp;&nbsp;
+                <li><a href="#"><FaShoppingCart color="skyblue"size={30}  onClick={() => setShow(false)}></FaShoppingCart><span className='cartui'>{size}</span></a></li>
+                
+              </ul>
+            </nav>
 
-
-            </form>
-          </div>
-        </div>
-      </nav>
-
-
-
-      <div>
+            <div>
         <Modal
           show={modal}
           onHide={handleClose}
@@ -176,10 +142,10 @@ export function Header({setShow, size }) {
             </div>
           </Modal.Body>
         </Modal>
-      </div>
+      </div> 
 
-      
-    </div>
+
+</>
   );
 }
 
