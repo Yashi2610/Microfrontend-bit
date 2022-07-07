@@ -18,7 +18,7 @@ const CardPage = ({ item, handleClick }) => {
 
       <div className={styles["details"]}>
 
-        <p>{title}</p>
+        <p className="title">{title}</p>
 
         <p>{author}</p>
 

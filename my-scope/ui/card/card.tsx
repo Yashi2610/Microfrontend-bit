@@ -16,9 +16,21 @@ export function Card() {
   const [cart, setCart] = useState<any[]>([]);
 
   const handleClick = (item: any) => {
-    if (cart.indexOf(item) !== -1) return;
+    console.log('item',item,cart)
+   const isProductExist = cart.find((product)=>product.id===item.id) 
+    if (isProductExist){
+      isProductExist.amount+=1
+      const newList  = cart.map((product)=>{if(product.id===item.id){
+        return isProductExist
+      }
+    return product} )
+      setCart(newList)
+    alert("one more item added in your cart");
+      return
+    };
 
     setCart([...cart, item]);
+    
   };
 
   const handleChange = (item: any, d: any) => {

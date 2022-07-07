@@ -4,6 +4,7 @@
   padding: 0;
 }
 
+
 section {
   width: 80%;
 
@@ -13,7 +14,7 @@ section {
 
   display: grid;
 
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 
   grid-template-rows: auto;
 }
@@ -23,18 +24,16 @@ section {
 
   padding: 20px;
 }
-
+.title{
+  margin-top: 1px;
+  margin-bottom: 0.6rem;
+}
 .cards:hover {
   box-shadow: 0 10px 10px 10px rbga(0, 0, 0, 0.1);
 
   cursor: pointer;
 }
 
-.image_box img {
-  width: 150px;
-
-  height: 200px;
-}
 .image_box img {
 
     width: 150px;
@@ -46,6 +45,7 @@ section {
   .details p:nth-child(1) {
 
     font-weight: bold;
+    font-size: 14px;
 
   }
 
@@ -54,6 +54,7 @@ section {
     color: grey;
 
     font-size: 0.8rem;
+  
 
   }
 
@@ -62,6 +63,7 @@ section {
     font-weight: bolx;
 
     color: grey;
+    padding: 0%;
 
   }
 
@@ -76,5 +78,6 @@ section {
     background-color: skyblue;
 
     outline: none;
+    width:70%;
 
   }

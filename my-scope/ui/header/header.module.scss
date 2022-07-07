@@ -9,7 +9,7 @@
 .main_div {
   height: 54vh;
 
-  background: linear-gradient(to right, #086573 0%, #85bee2 100%);
+  background:#9ed4ee;
 }
 
 .title {
@@ -18,23 +18,16 @@
 
 .title::before {
   position: absolute;
-
-  content: '';
-
+  content: "";
   height: 4px;
-
   width: 33px;
-
-  bottom: 1px;
-
+  bottom: -1px;
   left: 0;
-
   border-radius: 5px;
-
   margin-left: 5px;
-
-  background: linear-gradient(to right, #99004d 0%, #ff0080 100%);
+  background: linear-gradient(to right, #073c8b 0%, #6c5ce7 100%);
 }
+
 .loginform {
   margin: auto;
 }
@@ -53,14 +46,17 @@
   font-weight: 500;
 
   font-size: 16px;
+  
 }
 
 .btn {
   font-size: 20px;
 
-  background-color: #cc4187;
 
   font-weight: 600;
+}
+#LoginBtn{
+  background-color: pink;
 }
 
 .card_button {
