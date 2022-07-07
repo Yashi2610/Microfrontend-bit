@@ -100,7 +100,7 @@ export function Header({setShow, size }) {
                     <div className="mb-3 pt-1">
                       <input
                         type="email"
-                        className="input-box p-2"
+                        className="form-control input-box p-2"
                         id="exampleInputEmail1"
                         placeholder="Enter Your Email"
                         name="email"
@@ -114,7 +114,7 @@ export function Header({setShow, size }) {
                     <div className="mb-3 pt-1">
                       <input
                         type="password"
-                        className="input-box p-2"
+                        className="form-control input-box p-2"
                         id="exampleInputPassword1"
                         name="password"
                         value={formValues.password}
@@ -126,7 +126,7 @@ export function Header({setShow, size }) {
                       </p>
                     </div>
 
-                    <button type="submit" className="btn w-100" id="LoginBtn">
+                    <button type="submit" className={"btn w-100 "+styles['LoginBtn']} id="LoginBtn">
                       Login
                     </button>
 

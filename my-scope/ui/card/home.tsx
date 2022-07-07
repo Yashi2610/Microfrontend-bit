@@ -16,6 +16,9 @@ import img5 from './kings.jpg';
 
 import img6 from './door.jpg';
 
+import img7 from './author.jpg';
+import img8 from './stephan.jpg';
+
 const Home = ({ handleClick }) => {
   const books = [
     {
@@ -78,15 +81,15 @@ const Home = ({ handleClick }) => {
     },
     {
       id: 7,
-      title: 'Lock every door',
-      img: img6,
+      title: 'The Author',
+      img: img7,
       price: 70,
       amount: 1,
     },
     {
       id: 8,
-      title: 'Lock every door',
-      img: img6,
+      title: 'Stephan Kings',
+      img: img8,
       price: 70,
       amount: 1,
     },
