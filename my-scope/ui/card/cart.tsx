@@ -1,5 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import styles from './cart.module.scss';
+import React, { useState, useEffect } from "react";
+
+import styles from "./cart.module.scss";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+
 const Cart = ({ cart, setCart, handleChange }) => {
   const [price, setPrice] = useState(0);
 
@@ -18,40 +22,67 @@ const Cart = ({ cart, setCart, handleChange }) => {
 
     setPrice(ans);
   };
+
   useEffect(() => {
     handlePrice();
   });
   return (
-    <article>
-      {cart.map((item: any) => (
-        <div className={styles["cart_box"]} key={item.id}>
-          <div className={styles["cart_img"]}>
-            <img src={item.img} alt="" />
+    <div className="container ">
+      <article>
+        {cart.map((item: any) => (
+          <div key={item.id} className={styles["cart_box"]}>
+            <div className="row ">
+              <div className="col-sm-1">
+                <img src={item.img} alt="" />
+              </div>
 
-            <p>{item.title}</p>
+              <div className="col-sm-4  ">
+                <span className="fw-bold">{item.title}</span>
+              </div>
+
+              <div className="col-sm-3 ">
+                <button
+                  className="btn btn-info btn-sm"
+                  onClick={() => handleChange(item, -1)}
+                >
+                  -
+                </button>
+                <button className="btn btn-info btn-sm ms-2 me-2">
+                  {item.amount}
+                </button>
+
+                <button
+                  className="btn btn-info btn-sm"
+                  onClick={() => handleChange(item, +1)}
+                >
+                  +
+                </button>
+              </div>
+
+              <div className="col-sm-2 ">
+                <span className="fw-bold">Price: {item.price}</span>
+              </div>
+
+              <div className="col-sm-2 text-end ">
+                <button
+                  id={styles["remove"]}
+                  className=" btn btn-danger btn-sm"
+                  onClick={() => handleRemove(item.id)}
+                >
+                  Remove
+                </button>
+              </div>
+            </div>
           </div>
+        ))}
 
-          <div>
-            <button onClick={() => handleChange(item, 1)}>+</button>
+        <div className={styles["total"]}>
+          <span>Total Price of your Cart</span>
 
-            <button>{item.amount}</button>
-
-            <button onClick={() => handleChange(item, -1)}>-</button>
-          </div>
-
-          <div>
-            <span>{item.price}</span>
-
-            <button onClick={() => handleRemove(item.id)}>Remove</button>
-          </div>
+          <span>Rs : {price}</span>
         </div>
-      ))}
-      <div className={styles["total"]}>
-        <span>Total Price of your Cart</span>
-
-        <span>Rs - {price}</span>
-      </div>
-    </article>
+      </article>
+    </div>
   );
 };
 
